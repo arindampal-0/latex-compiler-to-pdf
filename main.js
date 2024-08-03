@@ -1,4 +1,4 @@
-import { parse, HtmlGenerator } from "/dist/latex.mjs";
+import { parse, HtmlGenerator } from "/latex-compiler-to-pdf/dist/latex.mjs";
 
 let latexCode = `
 \\documentclass{article}
@@ -24,7 +24,7 @@ function generateHtmlFromLatex(latexCode) {
   //   console.log(body);
 
   // console.log(generator.htmlDocument().documentElement.outerHTML);
-  const url = new URL("latex.js/", window.location.href);
+  const url = new URL("dist/", window.location.href);
   //   console.log(url.href);
   const headStylesAndScripts = generator.stylesAndScripts(url.href);
   //   console.log(headStylesAndScripts);
