@@ -1,0 +1,111 @@
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  padding: 0;
+  margin: 0;
+
+  /* https://colorhunt.co/palette/201e43134b70508c9beeeeee */
+  --primary-dark: #201e43;
+  --secondary-dark: #134b70;
+  --tertiary-dark: #508c9b;
+  --accent: #eeeeee;
+
+  --accent-yellow: #eca72c;
+  --accent-red: #f03a47;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--primary-dark);
+  color: var(--accent);
+  width: 100wh;
+  height: 100vh;
+  padding: 0;
+  margin: 0;
+}
+
+header {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+main {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  gap: 0.5em;
+  padding: 0.5em;
+
+  & .edit-latex,
+  .preview {
+    flex: 1;
+  }
+
+  & .edit-latex {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5em;
+    border-radius: 0.5em;
+    /* padding: .2em; */
+
+    & #latex-textarea {
+      flex: 1;
+      width: 95%;
+      border-radius: 0.5em;
+      background-color: var(--secondary-dark);
+      padding: 0.5em;
+      color: var(--accent);
+    }
+
+    & #compile-button {
+      background-color: transparent;
+      color: var(--accent-yellow);
+      border: 0.1em solid var(--accent-yellow);
+      border-radius: 0.5em;
+      font-size: 1em;
+    }
+
+    & #compile-button:hover {
+      background-color: var(--accent-yellow);
+      color: var(--white);
+      cursor: pointer;
+    }
+  }
+
+  & .preview {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: .5em;
+
+    & #pdf-preview {
+      background-color: #fff;
+      border-radius: 0.5em;
+      border: none;
+      flex: 1;
+      width: 100%;
+    }
+
+    & #print-pdf-button {
+      background-color: transparent;
+      color: var(--accent-red);
+      border: 0.1em solid var(--accent-red);
+      border-radius: 0.5em;
+      font-size: 1em;
+    }
+
+    & #print-pdf-button:hover {
+      background-color: var(--accent-red);
+      color: var(--white);
+      cursor: pointer;
+    }
+  }
+}
